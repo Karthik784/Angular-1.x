@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en" ng-app="myMovie">
+    <head>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.4/angular.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="moviescript.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/core.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    </head>
+    <body ng-controller="controller">
+        <div class="page-header">
+            <h1>Movie Application</h1>
+        </div>
+        Enter Movie Name:<input type="text" placeholder="Search by Movie Name" ng-model="movieinput" class="form-control input-sm">
+        <button class="btn btn-warning" ng-click="movieSearch()">Search</button>
+        <div ng-if=movie.Response>
+            <tr>
+                <td><img class="img-thumbnail" ng-src="{{movie.Poster}}"></td>
+            </tr>
+            <div>
+                <td>Title: {{movie.Title}}</td>
+                <div>Year: {{movie.Year}}</div>
+                <div>Language: {{movie.Language}}</div>
+                <div>Genre: {{movie.Genre}}</div>
+                <div>Story: {{movie.Plot}}</div>
+                <div>Director: {{movie.Director}}</div>
+                <div>Cast: {{movie.Actors}}</div>
+                <div>Rated: {{movie.Rated}}</div>
+                <div>IMDB Rating: {{movie.imdbRating}}</div>    
+            </div>
+        </div>
+    </body>
+</html>
